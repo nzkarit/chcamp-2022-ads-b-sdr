@@ -6,7 +6,10 @@ These are some instruction I put together to get the VM up and running. I have b
 1. Now clipboard, resize etc should work
 
 # PreReq
-1. `sudo apt install git cmake libusb-dev libusb-1.0-0-dev open-vm-tools build-essential librtlsdr-dev pkg-config python3-numpy`
+1. `sudo apt install git`
+1. `git clone https://github.com/nzkarit/chcamp-2022-ads-b-sdr.git`
+1. `sudo apt install cmake libusb-dev libusb-1.0-0-dev open-vm-tools build-essential librtlsdr-dev pkg-config python3-numpy`
+1. `sudo apt-get install librtlsdr-dev libusb-1.0-0-dev pkg-config debhelper`
 
 # Setup RTLSDR
 1. `git clone git://git.osmocom.org/rtl-sdr.git`
@@ -33,12 +36,11 @@ These are some instruction I put together to get the VM up and running. I have b
 1. `sudo hackrf_info`
 
 # Setup dump1090
-1. `git clone https://github.com/MalcolmRobb/dump1090.git`
-1. `cd dump1090`
-1. make
+1. `sudo apt install dump1090-mutability`
+1. Don't select auto start
 
 ## Test dump1090
-1. `./dump1090 --net`
+1. `dump1090-mutability --net`
 1. Browse to http://localhost:8080/
 1. If there are planes overhead with ADS-B you should see them plotted on the map
 

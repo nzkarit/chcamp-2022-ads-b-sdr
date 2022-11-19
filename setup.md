@@ -38,10 +38,11 @@ These are some instruction I put together to get the VM up and running. I have b
 # Setup dump1090
 1. `sudo apt install dump1090-mutability`
 1. Don't select auto start
+1. sudo mkdir /run/dump1090-mutability
 
 ## Test dump1090
-1. `dump1090-mutability --net`
-1. Browse to http://localhost:8080/
+1. `sudo dump1090-mutability --net --write-json /run/dump1090-mutability/ --write-json-every 1`
+1. Browse to http://localhost/dump1090/
 1. If there are planes overhead with ADS-B you should see them plotted on the map
 
 # Setup ADSB Out

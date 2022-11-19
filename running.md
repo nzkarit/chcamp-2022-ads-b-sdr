@@ -2,28 +2,21 @@ These are the commands to help you during the workshop.
 
 # OS Creds
 If you are using the provided VM these are the creds to use:
-* User: `tuskcon`
-* Password: `tuskcon`
-
-# Before we start
-Ensure that have a copy of the latest code and Git Pull everything
-1. `cd ADSB-Out`
-1. `git pull`
-1. `cd ../tuskcon-2018-vm`
-1. `git pull`
+* User: `chcamp`
+* Password: `chcamp`
 
 # dump1090
 dump1090 is a tool for the RTLSDR which will take ADS-B signals. You will need a RTLSDR to run this tool.
 
 ## Run dump1090 actual planes
 1. `cd dump1090`
-1. `./dump1090 --net`
-1. Browse to http://localhost:8080/
+1. `sudo dump1090-mutability --net --write-json /run/dump1090-mutability/ --write-json-every 1`
+1. Browse to http://localhost/dump1090/
 
 ## Run dump1090 with ADSB-Out
 1. `cd dump1090`
-1. `./dump1090 --net --freq 915000000`
-1. Browse to http://localhost:8080/
+1. `sudo dump1090-mutability --freq 915000000 --net --write-json /run/dump1090-mutability/ --write-json-every 1`
+1. Browse to http://localhost/dump1090/
 
 # ADSB-Out
 [ADSB-Out](https://github.com/nzkarit/ADSB-Out) is a tool for broadcasting ADS-B signals. **DO NOT** broadcast on the aviation frequency. Broadcast on an ISM band such as 915MHz. When using `hackrf_transfer` use the `-f 915000000` flag to broadcast on 915MHz. You will need a HackRF to run this tool.

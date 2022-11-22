@@ -1,7 +1,7 @@
 These are some instruction I put together to get the VM up and running. I have been working on on Ubuntu 22.04 Desktop.
 
 # Install the relevant helper tools for the VM
-1. `sudo apt install virtualbox-guest-utils virtualbox-guest-x11`
+1. Virtualbox `sudo apt install virtualbox-guest-utils virtualbox-guest-x11`
 1. Reboot
 1. Now clipboard, resize etc should work
 
@@ -38,7 +38,7 @@ These are some instruction I put together to get the VM up and running. I have b
 # Setup dump1090
 1. `sudo apt install dump1090-mutability`
 1. Don't select auto start
-1. sudo mkdir /run/dump1090-mutability
+1. `sudo mkdir /run/dump1090-mutability`
 
 ## Test dump1090
 1. `sudo dump1090-mutability --net --write-json /run/dump1090-mutability/ --write-json-every 1`
@@ -49,8 +49,7 @@ These are some instruction I put together to get the VM up and running. I have b
 1. `git clone https://github.com/nzkarit/ADSB-Out.git`
 
 ## Test ADSB Out
-1. `cd dump1090`
-1. `./dump1090 --net --freq 915000000`
+1. `sudo dump1090-mutability --net --write-json /run/dump1090-mutability/ --write-json-every 1 --freq 915000000`
 1. Browse to http://localhost:8080/
 1. `cd ADSB-Out`
 1. `./ADSB_Encoder.py`
